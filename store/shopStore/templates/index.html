@@ -18,13 +18,12 @@
     <div id='products' class="col-lg-9">
       <div class="row mx-auto">
         {% for product in products %}
-        <div class="card mx-auto mb-3" style="width: 18rem; background-color:lightblue">
-          <img src="{{product.image.url}}" class="card-img-top" alt="...">
+        <div class="card mx-auto mb-3" style="width: 18rem;background-color:lightblue">
+          <img align = "center" src="{{product.image.url}}" class="card-img-top mt-3" alt="..." style=" width : 250px; height:180px;">
           <div class="card-body">
-            <h5 align="center" class="card-title">{{product.name}}</h5>
-            <h6 align="center" class="card-text">BDT {{product.price}}</h6>
-            <p align="center" class="card-text">{{product.description}}</p>
-            <p align="center"><a href="#" class="btn btn-outline-warning">Add to Cart</a></p>
+            <p align="center"><a href="#" class="btn btn-dark mt-1">{{product.name}}</a></p>
+            <p align="center"><a href="#" class="btn btn-danger mt-2">BDT {{product.price}}</a></p>
+            <p align="center"><a href="#" class="btn btn-outline-warning mt-5">Add to Cart</a></p>
           </div>
         </div>
         {% endfor %}
