@@ -5,4 +5,5 @@ from .models.product import Product
 # Create your views here.
 def index(request):
     prods = Product.objects.all()
-    return render(request , 'index.html', {'products':prods}) 
+    return render(request , 'orders/order.html') 
+    # return render(request , 'index.html', {'products':prods}) 
