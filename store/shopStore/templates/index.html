@@ -5,6 +5,17 @@
     <title>Document</title>
 </head>
 <body>
-        <h1>Html page served</h1>
+
+    {% for product in products %}
+
+        <table>
+            <tr>
+                <td> {{product.name}}</td>
+                <td> {{product.category.name}}</td>
+                <td> {{product.price}}</td>
+                <td> {{product.image}}</td>
+            </tr>
+        </table>
+    {% endfor %}
 </body>
 </html>
