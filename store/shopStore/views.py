@@ -4,6 +4,10 @@ from .models.product import Product
 from .models.category import Category
 
 # Create your views here.
+
+def signup(request):
+    return render(request,'signup.html')
+
 def index(request):
     products = Product.objects.all()
     categories = Category.objects.all()

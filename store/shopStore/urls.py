@@ -17,7 +17,9 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 from .views import index
+from .views import signup
 
 urlpatterns = [
-    path('',index)
+    path('',index),
+    path('signup/',signup)
 ]
