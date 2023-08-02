@@ -9,7 +9,10 @@ def home(request):
     return render(request,'home.html')
 
 def signup(request):
-    return render(request,'signup.html')
+    if request.method == 'GET':
+        return render(request,'signup.html')
+    
+    return HttpResponse(request.POST.get('email'))
 
 def index(request):
     products = Product.objects.all()
