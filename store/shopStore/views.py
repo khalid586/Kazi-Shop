@@ -2,17 +2,12 @@ from django.shortcuts import render
 from django.http import HttpResponse
 from .models.product import Product
 from .models.category import Category
+from .models.customer import Customer
 
 # Create your views here.
 
 def home(request):
     return render(request,'home.html')
-
-def signup(request):
-    if request.method == 'GET':
-        return render(request,'signup.html')
-    
-    return HttpResponse(request.POST.get('email'))
 
 def index(request):
     products = Product.objects.all()
@@ -21,3 +16,18 @@ def index(request):
     data['products'] = products
     data['categories'] = categories
     return render(request , 'index.html', data) 
+
+def signup(request):
+    if request.method == 'GET':
+        return render(request,'signup.html')
+    
+    postData = request.POST
+    first_name = postData.get('firstname')
+    last_name = postData.get('lastname')
+    phone = postData.get('phone')
+    email = postData.get('email')
+    password = postData.get('password')
+    customer = Customer(first_name = first_name , last_name = last_name , phone = phone , email = email , password = password)
+
+    customer.register()
+    return HttpResponse('Success')
