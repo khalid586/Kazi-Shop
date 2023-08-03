@@ -39,7 +39,7 @@
                   <input hidden type="text" value = True name = 'remove'>
                   <input type= "submit" value = "-" class = "col left btn btn-block btn-outline-warning ">
                 </form>
-                <div class = "text-center col "><b>{{product|cart_quantity:request.session.cart}}</b> item</div>
+                <div class = "text-center col "><button type="button" class="btn btn-warning"><b>{{product|cart_quantity:request.session.cart}} item</b></button></div>
               
                 <form action="/" method = "POST" class = "col-2">
                   {% csrf_token %}
