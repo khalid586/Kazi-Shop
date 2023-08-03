@@ -13,7 +13,7 @@ def home(request):
 class Index(View):
     def post(self,request):
         product = request.POST.get('product')
-        
+        remove = request.POST.get('remove')
         # print(product)
 
         cart = request.session.get('cart')
@@ -21,7 +21,13 @@ class Index(View):
         if cart: # if cart exists I have to do something else I'll do another thing
             quantity = cart.get(product)
             if quantity:
-                cart[product] = quantity+1
+                if remove:
+                    if quantity <= 1:
+                        cart.pop(product)
+                    else:   
+                        cart[product] = quantity-1
+                else:
+                    cart[product] = quantity+1 
             else:
                 cart[product] = 1
         else:
@@ -34,6 +40,10 @@ class Index(View):
         return redirect('homepage')
 
     def get(self, request):
+        cart = request.session.get('cart')
+        if not cart:
+            request.session.cart = {}
+            
         products = Product.objects.all()
         categories = Category.objects.all()
 
