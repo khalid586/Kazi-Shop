@@ -30,7 +30,7 @@ def signup(request):
 
     errorMessage = None
 
-    if not first_name or len(first_name) < 4:
+    if len(first_name) < 4:
         errorMessage = 'First Name should be atleast 4 characters'
     elif len(last_name) < 4:
         errorMessage = 'Last Name should be atleast 4 characters'
