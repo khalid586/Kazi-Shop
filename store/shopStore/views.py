@@ -29,6 +29,14 @@ def signup(request):
     password = postData.get('password')
 
     errorMessage = None
+    value = {
+        'first_name' : first_name,
+        'last_name' : last_name,
+        'phone' : phone,
+        'email': email
+
+
+    }
 
     if len(first_name) < 4:
         errorMessage = 'First Name should be atleast 4 characters'
@@ -45,4 +53,8 @@ def signup(request):
         customer = Customer(first_name = first_name , last_name = last_name , phone = phone , email = email , password = password)
         customer.register()
     else:
-        return render(request,'signup.html',{'error':errorMessage})
+        data = {
+            'error': errorMessage,
+            'values': value
+        }
+        return render(request,'signup.html',data)
