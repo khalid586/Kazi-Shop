@@ -23,7 +23,12 @@
           <div class="card-body">
             <p align="center"><a href="#" class="btn btn-dark">{{product.name}}</a></p>
             <p align="center"><a href="#" class="btn btn-danger"> {{product.price}}</a>Tk</p>
-            <p align="center"><a href="#" class="btn btn-outline-warning">Add to Cart</a></p>
+            
+            <form action="/" method = "POST">
+                {% csrf_token %}
+                <input hidden type="text" name = 'product' value = '{{product.id}}'>
+                <p align="center"><input type = "submit" class="btn btn-outline-warning" value = "Add to Cart"></p>
+            </form>
           </div>
         </div>
         {% endfor %}
