@@ -27,7 +27,22 @@ def signup(request):
     phone = postData.get('phone')
     email = postData.get('email')
     password = postData.get('password')
-    customer = Customer(first_name = first_name , last_name = last_name , phone = phone , email = email , password = password)
 
-    customer.register()
-    return HttpResponse('Success')
+    errorMessage = None
+
+    if not first_name or len(first_name) < 4:
+        errorMessage = 'First Name should be atleast 4 characters'
+    elif len(last_name) < 4:
+        errorMessage = 'Last Name should be atleast 4 characters'
+    elif(len(phone) < 11):
+        errorMessage = 'Phone number should be atleast 11 characters'
+    elif not email:
+        errorMessage = 'Email field cannot be blank'
+    elif len(password) < 6:
+        errorMessage = 'Password should be atleast 4 characters'
+
+    if not errorMessage:
+        customer = Customer(first_name = first_name , last_name = last_name , phone = phone , email = email , password = password)
+        customer.register()
+    else:
+        return render(request,'signup.html',{'error':errorMessage})
