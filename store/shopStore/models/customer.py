@@ -10,5 +10,8 @@ class Customer(models.Model):
     def __str__(self):
         return self.first_name
     
-    def register(self):
+    def register(self):    
         self.save()
+
+    def isExists(self):
+        return Customer.objects.filter(email = self.email)
