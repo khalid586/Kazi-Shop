@@ -13,5 +13,9 @@ class Customer(models.Model):
     def register(self):    
         self.save()
 
+    @staticmethod
+    def get_customer(email):
+        return Customer.objects.get(email = email)
+
     def isExists(self):
         return Customer.objects.filter(email = self.email)
