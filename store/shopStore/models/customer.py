@@ -15,7 +15,10 @@ class Customer(models.Model):
 
     @staticmethod
     def get_customer(email):
-        return Customer.objects.get(email = email)
+        try:
+            return Customer.objects.get(email = email)
+        except:
+            return False
 
     def isExists(self):
         return Customer.objects.filter(email = self.email)
