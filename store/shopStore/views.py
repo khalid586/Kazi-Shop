@@ -1,5 +1,6 @@
 from django.shortcuts import render , redirect
 from django.http import HttpResponse
+from django.contrib.auth.hashers import make_password , check_password
 from .models.product import Product
 from .models.category import Category
 from .models.customer import Customer
@@ -16,6 +17,7 @@ def index(request):
     data['products'] = products
     data['categories'] = categories
     return render(request , 'index.html', data) 
+
 
 def signup(request):
     if request.method == 'GET':
@@ -53,7 +55,8 @@ def signup(request):
     elif customer.isExists():
          errorMessage = 'Email already registered'
 
-    if not errorMessage:
+    if not errorMessage: 
+        customer.password = make_password(customer.password)
         customer.register()
 
         return redirect('homepage')
@@ -63,3 +66,8 @@ def signup(request):
             'values': value
         }
         return render(request,'signup.html',data)
+    
+
+def login(request):
+    if request.method == 'GET':
+        return render(request,'login.html')
