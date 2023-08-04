@@ -20,7 +20,7 @@
     <div id='products' class="col-lg-9">
       <div class="row mx-auto">
         {% for product in products %}
-        <div class="card mx-auto mb-3" style="width: 18rem;background-color:lightyellow">
+        <div class="card mx-auto mb-3" id = {{product.id}} style="width: 18rem;background-color:lightyellow">
           <img align = "center" src="{{product.image.url}}" class="card-img-top mt-5" alt="..." style=" width : auto; height:250px; border-radius: 150px;">
           <div class="card-body">
             <p align="center"><a href="#" class="btn btn-dark">{{product.name}}</a></p>
@@ -33,7 +33,7 @@
               
             {%if product|is_in_cart:request.session.cart %}
               <div class = "row">
-                <form action="/" method = "POST" class = "col-2">
+                <form action="/#{{product.id}}" method = "POST" class = "col-2">
                   {% csrf_token %}
                   <input hidden type="text" name = 'product' value = '{{product.id}}'>
                   <input hidden type="text" value = True name = 'remove'>
@@ -41,14 +41,14 @@
                 </form>
                 <div class = "text-center col "><button type="button" class="btn btn-warning"><b>{{product|cart_quantity:request.session.cart}} item</b></button></div>
               
-                <form action="/" method = "POST" class = "col-2">
+                <form action="/#{{product.id}}" method = "POST" class = "col-2">
                   {% csrf_token %}
                   <input hidden type="text" name = 'product' value = '{{product.id}}'>
                   <input type= "submit" value = "+" class = "col btn btn-block btn-outline-warning ">
                 </form>
               </div>
             {% else %}
-                <form action="/" method = "POST" class = "btn-block mt-3">
+                <form action="/#{{product.id}}" method = "POST" class = "btn-block mt-3">
                   {% csrf_token %}
                   <input hidden type="text" name = 'product' value = '{{product.id}}'>
                   <p align="center" ><input type = "submit" class="btn btn-outline-warning btn-block" value = "Add to Cart"></p>
