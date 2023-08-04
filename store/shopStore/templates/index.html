@@ -37,18 +37,22 @@
                   {% csrf_token %}
                   <input hidden type="text" name = 'product' value = '{{product.id}}'>
                   <input hidden type="text" value = True name = 'remove'>
-                  <input type= "submit" value = "-" class = "col left btn btn-block btn-outline-warning ">
+                  <input type= "submit" value = "-" class = "col btn btn-block btn-outline-warning mt-3 mb-4">
                 </form>
-                <div class = "text-center col "><button type="button" class="btn btn-warning"><b>{{product|cart_quantity:request.session.cart}} item</b></button></div>
-              
+
+              {% if product|cart_quantity:request.session.cart > 1 %}
+                  <div class = "text-center col "><button type="button" class="btn btn-warning mt-3"><b>{{product|cart_quantity:request.session.cart}} items</b></button></div>
+              {% else %}
+              <div class = "text-center col "><button type="button" class="btn btn-warning mt-3"><b>{{product|cart_quantity:request.session.cart}} item</b></button></div>
+              {% endif%}
                 <form action="/#{{product.id}}" method = "POST" class = "col-2">
                   {% csrf_token %}
                   <input hidden type="text" name = 'product' value = '{{product.id}}'>
-                  <input type= "submit" value = "+" class = "col btn btn-block btn-outline-warning ">
+                  <input type= "submit" value = "+" class = "col btn btn-block btn-outline-warning mt-3 mb-4">
                 </form>
               </div>
             {% else %}
-                <form action="/#{{product.id}}" method = "POST" class = "btn-block mt-3">
+                <form action="/#{{product.id}}" method = "POST" class = "btn-block mt-3 mb-4">
                   {% csrf_token %}
                   <input hidden type="text" name = 'product' value = '{{product.id}}'>
                   <p align="center" ><input type = "submit" class="btn btn-outline-warning btn-block" value = "Add to Cart"></p>
