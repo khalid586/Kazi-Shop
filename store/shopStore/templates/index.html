@@ -20,13 +20,12 @@
     <div id='products' class="col-lg-9">
       <div class="row mx-auto">
         {% for product in products %}
-        <div class="card mx-auto mb-3" id = {{product.id}} style="width: 18rem;background-color:lightyellow">
-          <img align = "center" src="{{product.image.url}}" class="card-img-top mt-5" alt="..." style=" width : auto; height:250px; border-radius: 150px;">
+        <div class="card mx-auto mb-3" id = {{product.id}} style="width: 18rem;background-color:lightcyan">
+          <img align = "center" src="{{product.image.url}}" class="card-img-top mt-3" alt="..." style=" width : auto; height:250px; border-radius: 150px;">
           <div class="card-body">
-            <p align="center"><a href="#" class="btn btn-dark">{{product.name}}</a></p>
-            <p align="center"><a href="#" class="btn btn-danger"> {{product.price}}</a>Tk</p>
-            
-          
+            <p align="center">{{product.name}}</p> 
+            <p align="center"> <b>{{product.price}}Tk</b></p>
+            <!-- <p align="center"> <b>{{product.category}}</b></p> -->
           </div>
 
           <div class="card-footer row no-gutters" style="background-color:white">
@@ -40,11 +39,12 @@
                   <input type= "submit" value = "-" class = "col btn btn-block btn-outline-warning mt-3 mb-4">
                 </form>
 
-              {% if product|cart_quantity:request.session.cart > 1 %}
-                  <div class = "text-center col "><button type="button" class="btn btn-warning mt-3"><b>{{product|cart_quantity:request.session.cart}} items</b></button></div>
-              {% else %}
-              <div class = "text-center col "><button type="button" class="btn btn-warning mt-3"><b>{{product|cart_quantity:request.session.cart}} item</b></button></div>
-              {% endif%}
+                {% if product|cart_quantity:request.session.cart > 1 %}
+                    <div class = "text-center col "><button type="button" class="btn btn-warning mt-3"><b>{{product|cart_quantity:request.session.cart}} items</b></button></div>
+                {% else %}
+                    <div class = "text-center col "><button type="button" class="btn btn-warning mt-3"><b>{{product|cart_quantity:request.session.cart}} item</b></button></div>
+                {% endif%}
+
                 <form action="/#{{product.id}}" method = "POST" class = "col-2">
                   {% csrf_token %}
                   <input hidden type="text" name = 'product' value = '{{product.id}}'>
