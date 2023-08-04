@@ -4,12 +4,14 @@
 
 {% block content %}
 
-<div class="container mt-4" >
-    
-    <div class="p-4 m-4">
 
+
+<div class="container mt-4" >
+
+    <div class="p-4 m-4">
+        <h1 align = "center"> SignUp Form</h1>
         
-        <div class="col-lg-5 rounded mx-auto border pt-4" style="background-color: lightpink">
+        <div class="col-lg-5 rounded mx-auto border pt-4">
             <div class="text-center col">
             
                 <img 
@@ -19,7 +21,6 @@
             <div class="display-8">Create An Account</div>
             <hr>
             </div>
-            <h3 hidden class="alert alert-light border rounded">Create An Account</h3>
             <form action="" method="POST">
                 
                 {% csrf_token %}

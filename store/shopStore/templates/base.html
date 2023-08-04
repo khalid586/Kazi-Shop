@@ -70,14 +70,6 @@
         </div>
       </div>
     </nav>
-    <footer>
-      {% if request.session.customer %} 
-          <p align = "center" style="color: blue"><img align = "center" src="https://m.media-amazon.com/images/I/31XSun7-+cL._SY300_SX300_.jpg" style=" width:25px;height:25px; border-radius: 20px;" alt="aa"><b> You are Logged in</b></p>
-      {% else %}
-        <h4><p align = "center" style="color: red"><b>Please Log in</b></p></h4>
-        
-      {% endif %}
-    </footer>
     {% block content %} {% endblock %}
 
 	<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
