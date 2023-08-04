@@ -18,7 +18,7 @@ class Index(View):
 
         cart = request.session.get('cart')
         
-        if cart: # if cart exists I have to do something else I'll do another thing
+        if cart: # if cart exists I have to do something else I'll do something else
             quantity = cart.get(product)
             if quantity:
                 if remove:
@@ -102,7 +102,7 @@ class Signup(View):
             customer.password = make_password(customer.password)
             customer.register()
 
-            return redirect('homepage')
+            return redirect('login')
         else:
             data = {
                 'error': errorMessage,
