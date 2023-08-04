@@ -139,14 +139,21 @@ class Login(View):
 
 def logout(request):
     request.session.clear()
-    return redirect('login')
+    return redirect('homepage')
 
 
 def cart(request):
-    ids = list(request.session.get('cart').keys())
-    products = Product.get_products_by_id(ids)
-    print(products)
-    return render(request,'cart.html' , {'products':products})    
+    cart_session = request.session.get('cart')
+    if cart_session is not None:
+        ids = list(request.session.get('cart').keys())
+        products = Product.get_products_by_id(ids)
+        print(products)
+        return render(request,'cart.html' , {'products':products})    
+    else:
+         return render(request,'EmptyCart.html')    
+        # return HttpResponse("<h1>Your Cart</h1> <br><b>Your Cart is empty</b>")  
+
+    
 
 
 

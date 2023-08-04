@@ -45,25 +45,25 @@
                 </ul>
             </li> -->
             
-            <li class="nav-item">
-              <a class="nav-link" aria-current="page" href="/cart">Cart</a>
+            <li class="nav-item p-2">
+              <p class = "btn btn-warning"><a class="nav-link" aria-current="page" href="/cart">Cart</a> </p>
             </li>
             {% if request.session.customer %}       
-              <li class="nav-item">
-                <a class="nav-link" aria-current="page" href="/orders">Orders</a>
+              <li class="nav-item p-2">
+                <p class = "btn btn-info"><a class="nav-link" aria-current="page" href="/orders">Orders</a></p>
               </li>
           
-              <li class="nav-item">
-                <a class="nav-link" aria-current="page" href="logout">Logout</a>
+              <li class="nav-item p-2">
+                <p class = "btn btn-danger"><a class="nav-link" aria-current="page" href="logout">Logout</a></p>
               </li>
             
             {% else %}
-              <li class="nav-item">
-                <a class="nav-link" aria-current="page" href="/signup">Sign up</a>
+              <li class="nav-item p-2">
+                <p class = "btn btn-info"><a class="nav-link" aria-current="page" href="/signup">Sign up</a></p>
               </li>
 
-              <li class="nav-item">
-                <a class="nav-link" aria-current="page" href="/login">Login</a>
+              <li class="nav-item p-2">
+                <p class = "btn btn-success"><a class="nav-link " aria-current="page" href="/login">Login</a></p>
               </li>
             {% endif%}
 
