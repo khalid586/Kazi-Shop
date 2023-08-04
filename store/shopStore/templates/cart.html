@@ -1,0 +1,46 @@
+{% extends 'base.html' %}
+
+{% load cart %}
+{% block content %}
+    <h1 align = "center">Your Cart</h1>
+
+
+    <div class="container">
+        <div class = "border rounded p-4 m-4">
+            <table class="table" border = "">
+                <thead>
+                    <tr>
+                        <th>Product</th>
+                        <th>Image</th>
+                        <th>Price</th>
+                        <th>Quantity</th>
+                        <th>Total</th>
+                    </tr>
+                </thead>
+                <tbody>
+
+                    {% for product in products %}
+                    <tr>
+                        <td scope="row"> {{product.name}} </td>
+                        <td><img align = "center" src="{{product.image.url}}" class="card-img-top mt-3" alt="..." style=" width:100px ;height:100px; border-radius: 50px;"></td>
+                        <td>{{product.price}} </td>
+                        <td>{{product|cart_quantity:request.session.cart}}</td>
+                        <td>{{product|price_total:request.session.cart}}</td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+
+                <tfoot>
+                        <tr >
+                            <th colspan = "4" class = "text-center"> Total Price</th>
+                            <th > {{products|total_cart_price:request.session.cart}} </th>
+                        </tr>
+                </tfoot>
+            </table>
+
+            <div>
+                <p align = "center" class = ""><a href="#" class = "btn btn-outline-danger mt-2 col-lg-2 row-lg-2">Check Out</a></p>
+            </div>
+        </div>
+    </div>
+{% endblock %}
