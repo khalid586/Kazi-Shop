@@ -46,7 +46,7 @@
                   {% csrf_token %}
                   <input hidden type="text" name = 'product' value = '{{product.id}}'>
                   <input hidden type="text" value = True name = 'remove'>
-                  <input type= "submit" value = "-" class = "col btn btn-block btn-outline-warning mt-3 mb-4">
+                  <input type= "submit" value = "-" class = "col btn btn-block btn-outline-danger mt-3 mb-4">
                 </form>
 
                 {% if product|cart_quantity:request.session.cart > 1 %}
@@ -58,7 +58,7 @@
                 <form action="/#{{product.id}}" method = "POST" class = "col-2">
                   {% csrf_token %}
                   <input hidden type="text" name = 'product' value = '{{product.id}}'>
-                  <input type= "submit" value = "+" class = "col btn btn-block btn-outline-warning mt-3 mb-4">
+                  <input type= "submit" value = "+" class = "col btn btn-block btn-outline-success mt-3 mb-4">
                 </form>
               </div>
             {% else %}
