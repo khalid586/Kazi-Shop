@@ -25,5 +25,5 @@ urlpatterns = [
     path('login/',Login.as_view() , name = 'login'),
     path('logout/',logout,name = 'logout'),
     path('cart/',cart,name = 'cart'),
-    path('order/',order,name = 'order'),
+    path('orders/',order,name = 'order'),
 ]
