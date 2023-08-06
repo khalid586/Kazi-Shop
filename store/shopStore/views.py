@@ -154,6 +154,8 @@ def cart(request):
         # return HttpResponse("<h1>Your Cart</h1> <br><b>Your Cart is empty</b>")  
 
     
+def order(request):
+    return HttpResponse('order')
 
 
 
