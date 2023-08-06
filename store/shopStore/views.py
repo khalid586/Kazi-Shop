@@ -50,7 +50,7 @@ class Index(View):
         categoryID = request.GET.get('category')
 
         if categoryID:
-            products = Product.get.get_all_products_by_categoryid(categoryID)
+            products = Product.get_all_products_by_categoryid(categoryID)
         else:
             products = Product.get_all_products()
         data = {}
@@ -156,7 +156,6 @@ def cart(request):
     
 def order(request):
     return HttpResponse('order')
-
 
 
 
