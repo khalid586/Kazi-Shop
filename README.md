@@ -1,16 +1,5 @@
 An online departmental store which makes customer's life easy.
 
-You will find some demo and some useful commands bellow.
-
-**Our initial homepage looks like this**
-![](assets/intial%20homepage.png)
-
-**Our initial admin panel looks like this**
-![](assets/initial%20admin%20panel.png)
-![](assets/initial%20admin%20panel%202.png)
-
-<br><br>
-
 ### You will find some necessary instructions below
 <details> 
 <summary>How to create a django project</summary>
