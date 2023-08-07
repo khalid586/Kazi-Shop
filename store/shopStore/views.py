@@ -118,15 +118,17 @@ class Subscribe(View):
         last_name = postData.get('lastname')
         phone = postData.get('phone')
         email = postData.get('email')
+        address = postData.get('address')
 
         errorMessage = None
         value = {
             'first_name' : first_name,
             'last_name' : last_name,
             'phone' : phone,
-            'email': email
+            'email': email,
+            'address': address,
         }
-        subscriber = Subscriber(first_name = first_name , last_name = last_name , phone = phone , email = email)
+        subscriber = Subscriber(first_name = first_name , last_name = last_name , phone = phone , address = address ,email = email)
 
         if len(first_name) < 4:
             errorMessage = 'First Name should be atleast 4 characters'
@@ -142,7 +144,6 @@ class Subscribe(View):
 
         if not errorMessage: 
             subscriber.register()
-
             return render(request,'successful_subscribe.html')
         else:
             data = {
