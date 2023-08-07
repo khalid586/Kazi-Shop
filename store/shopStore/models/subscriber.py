@@ -5,7 +5,6 @@ class Subscriber(models.Model):
     last_name = models.CharField(max_length = 50)
     phone = models.CharField(max_length = 15)
     email = models.EmailField()
-    password = models.CharField(max_length = 500)
     
     def __str__(self):
         return self.first_name

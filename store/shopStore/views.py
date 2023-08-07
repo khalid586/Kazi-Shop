@@ -80,8 +80,6 @@ class Signup(View):
             'last_name' : last_name,
             'phone' : phone,
             'email': email
-
-
         }
         customer = Customer(first_name = first_name , last_name = last_name , phone = phone , email = email , password = password)
 
@@ -120,7 +118,6 @@ class Subscribe(View):
         last_name = postData.get('lastname')
         phone = postData.get('phone')
         email = postData.get('email')
-        password = postData.get('password')
 
         errorMessage = None
         value = {
@@ -128,10 +125,8 @@ class Subscribe(View):
             'last_name' : last_name,
             'phone' : phone,
             'email': email
-
-
         }
-        subscriber = Subscriber(first_name = first_name , last_name = last_name , phone = phone , email = email , password = password)
+        subscriber = Subscriber(first_name = first_name , last_name = last_name , phone = phone , email = email)
 
         if len(first_name) < 4:
             errorMessage = 'First Name should be atleast 4 characters'
@@ -141,14 +136,11 @@ class Subscribe(View):
             errorMessage = 'Phone number should be atleast 11 characters'
         elif not email:
             errorMessage = 'Email field cannot be blank'
-        elif len(password) < 4:
-            errorMessage = 'Password should be atleast 4 characters'
 
         elif subscriber.isExists():
             errorMessage = 'You have already subscribed with this email'
 
         if not errorMessage: 
-            subscriber.password = make_password(subscriber.password)
             subscriber.register()
 
             return render(request,'successful_subscribe.html')
