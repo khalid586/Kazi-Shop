@@ -5,6 +5,7 @@ from .models.product import Product
 from .models.category import Category
 from .models.customer import Customer
 from django.views import View
+from .models.subscriber import Subscriber
 # Create your views here.
 
 def home(request):
@@ -109,6 +110,54 @@ class Signup(View):
                 'values': value
             }
             return render(request,'signup.html',data)
+        
+class Subscribe(View):
+    def get(self,request):
+        return render(request,'subscribe.html')
+    def post(self,request):
+        postData = request.POST
+        first_name = postData.get('firstname')
+        last_name = postData.get('lastname')
+        phone = postData.get('phone')
+        email = postData.get('email')
+        password = postData.get('password')
+
+        errorMessage = None
+        value = {
+            'first_name' : first_name,
+            'last_name' : last_name,
+            'phone' : phone,
+            'email': email
+
+
+        }
+        subscriber = Subscriber(first_name = first_name , last_name = last_name , phone = phone , email = email , password = password)
+
+        if len(first_name) < 4:
+            errorMessage = 'First Name should be atleast 4 characters'
+        elif len(last_name) < 4:
+            errorMessage = 'Last Name should be atleast 4 characters'
+        elif(len(phone) < 11):
+            errorMessage = 'Phone number should be atleast 11 characters'
+        elif not email:
+            errorMessage = 'Email field cannot be blank'
+        elif len(password) < 4:
+            errorMessage = 'Password should be atleast 4 characters'
+
+        elif subscriber.isExists():
+            errorMessage = 'You have already subscribed with this email'
+
+        if not errorMessage: 
+            subscriber.password = make_password(subscriber.password)
+            subscriber.register()
+
+            return render(request,'successful_subscribe.html')
+        else:
+            data = {
+                'error': errorMessage,
+                'values': value
+            }
+            return render(request,'subscribe.html',data)
 
 
 class Login(View):
