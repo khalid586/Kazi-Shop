@@ -204,7 +204,7 @@ def cart(request):
 
     
 def order(request):
-    return HttpResponse('order')
+    return render(request,'orders.html')
 
 
 
