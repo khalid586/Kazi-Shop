@@ -119,6 +119,13 @@ class Subscribe(View):
         phone = postData.get('phone')
         email = postData.get('email')
         address = postData.get('address')
+        subs = {
+                'firstName' : first_name,
+                'lastName'  : last_name,
+                'address' : address,
+                'phone' : phone,
+                'email': email
+            }
 
         errorMessage = None
         value = {
@@ -144,7 +151,7 @@ class Subscribe(View):
 
         if not errorMessage: 
             subscriber.register()
-            return render(request,'successful_subscribe.html')
+            return render(request,'successful_subscribe.html',subs)
         else:
             data = {
                 'error': errorMessage,

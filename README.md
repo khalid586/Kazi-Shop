@@ -40,3 +40,12 @@ python manage.py makemigrations
 python manage.py migrate
 ```
 </details>
+
+
+<!-- Remaining tasks so far:
+
+1) Orders page (Page after checking out)
+2) Page shown after subscribing
+3) Admin panel design 
+
+-->
