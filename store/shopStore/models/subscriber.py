@@ -8,7 +8,7 @@ class Subscriber(models.Model):
     email = models.EmailField()
     
     def __str__(self):
-        return self.first_name
+        return self.first_name + ' ' + self.last_name
     
     def register(self):    
         self.save()

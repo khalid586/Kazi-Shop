@@ -6,6 +6,7 @@ from .models.category import Category
 from .models.customer import Customer
 from django.views import View
 from .models.subscriber import Subscriber
+from .models.orders import Order
 # Create your views here.
 
 def home(request):
@@ -193,7 +194,8 @@ def logout(request):
 
 def cart(request):
     cart_session = request.session.get('cart')
-    if cart_session is not None:
+
+    if cart_session is not None :
         ids = list(request.session.get('cart').keys())
         products = Product.get_products_by_id(ids)
         print(products)
@@ -203,8 +205,28 @@ def cart(request):
         # return HttpResponse("<h1>Your Cart</h1> <br><b>Your Cart is empty</b>")  
 
     
-def order(request):
-    return render(request,'orders.html')
+class Order(View):
+    def post(self,request):
+        address = request.POST.get('address')
+        phone = request.POST.get('phone')
+        cart = request.session.get('cart')
+        products = Product.get_products_by_id(list(cart.keys()))
+        customer = request.session.get('customer')
+
+        print(products)
+
+        for product in products:
+            order = Order(customer = customer ,
+                          product = product,
+                          price = product.price,
+                          address = address,
+                          phone = phone,
+                          quantity = cart.get(str(product.id))
+                          )
+            # order.save()
+        
+        request.session['cart'] = {}
+        return render(request,'orders.html')
 
 
 
