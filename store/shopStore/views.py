@@ -205,7 +205,10 @@ def cart(request):
         # return HttpResponse("<h1>Your Cart</h1> <br><b>Your Cart is empty</b>")  
 
     
-class Order(View):
+class OrderView(View):
+    def get(self,requeest):
+        return render(requeest,'orders.html')
+    
     def post(self,request):
         address = request.POST.get('address')
         phone = request.POST.get('phone')
@@ -216,14 +219,14 @@ class Order(View):
         print(products)
 
         for product in products:
-            order = Order(customer = customer ,
+            order = Order(customer = Customer(id = customer) ,
                           product = product,
                           price = product.price,
                           address = address,
                           phone = phone,
                           quantity = cart.get(str(product.id))
                           )
-            # order.save()
+            order.placeOrder()
         
         request.session['cart'] = {}
         return render(request,'orders.html')

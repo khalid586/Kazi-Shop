@@ -13,5 +13,5 @@ class Order(models.Model):
     date = models.DateField(default = datetime.datetime.today)
 
 
-    def register(self):
+    def placeOrder(self):
         self.save()
