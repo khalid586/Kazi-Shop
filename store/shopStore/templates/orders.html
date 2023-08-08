@@ -1,12 +1,53 @@
 {% extends 'base.html' %}
 
 {% block head %} Kazi Store | Orders{% endblock %}
+
+{% load cart %}
 {% block content %}
+
 
 <br>
         <p align = "center" style="color: green"><b>Congratulations! You've successfully placed the order.</b></p> 
-        
-        <br>
-        <p align="center"><a class = "btn btn-outline-danger" href='/' >Back to Home </a></p>
-        
+
+    <h1 align = "center">Your Cart</h1>
+
+
+    <div class="container">
+        <div class = "border rounded p-4 m-4">
+            <table class="table" border = "">
+                <thead>
+                    <tr>
+                        <th>Product</th>
+                        <th>Image</th>
+                        <th>Price</th>
+                        <th>Quantity</th>
+                        <th>Total</th>
+                    </tr>
+                </thead>
+                <tbody>
+
+                    {% for product in products %}
+                    <tr>
+                        <td scope="row"> {{product.name}} </td>
+                        <td><img align = "center" src="{{product.image.url}}" class="card-img-top mt-3" alt="..." style=" width:100px ;height:100px; border-radius: 50px;"></td>
+                        <td>{{product.price}} &#2547; </td>
+                        <td>{{product|cart_quantity:request.session.cart}}</td>
+                        <td>{{product|price_total:request.session.cart}} &#2547; </td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+
+                <tfoot>
+                        <tr >
+                            <th colspan = "4" class = "text-center"> Total Price</th>
+                            <th > {{products|total_cart_price:request.session.cart}} &#2547; </th>
+                        </tr>
+                </tfoot>
+            </table>
+
+        </div>
+    </div>
+  
+    <br>
+    <p align="center"><a class = "btn btn-outline-danger" href='/' >Back to Home </a></p>
 {% endblock %}
