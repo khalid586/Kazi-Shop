@@ -210,7 +210,7 @@ class OrderView(View):
         customer = requeest.session.get('customer')
         orders = Order.get_orders_by_customer(customer)
 
-        print(customer,orders)
+        # print(customer,orders)
         return render(requeest,'orders.html',{'orders':orders})
     
     def post(self,request):

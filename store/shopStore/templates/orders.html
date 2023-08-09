@@ -34,11 +34,14 @@
                         <td>{{order.price}} &#2547; </td>
                         <td>{{order.quantity}}</td>
                         <td>{{order.quantity|multiply:order.price}} &#2547; </td>
-                        <td>{{order.status|default:'pending'}}</td>
+                        {% if order.status %}
+                            <td><p class = "btn btn-success">Completed</p></td> 
+                        {% else %}
+                            <td><p class = "btn btn-warning">Pending</p></td>
+                        {% endif %}
                     </tr>
                     {% endfor %}
                 </tbody>
-
                 
             </table>
 
