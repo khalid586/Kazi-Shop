@@ -207,7 +207,11 @@ def cart(request):
     
 class OrderView(View):
     def get(self,requeest):
-        return render(requeest,'orders.html')
+        customer = requeest.session.get('customer')
+        orders = Order.get_orders_by_customer(customer)
+
+        print(customer,orders)
+        return render(requeest,'orders.html',{'orders':orders})
     
     def post(self,request):
         address = request.POST.get('address')
@@ -229,7 +233,7 @@ class OrderView(View):
             order.placeOrder()
         
         request.session['cart'] = {}
-        return render(request,'orders.html')
+        return render(request,'cart.html')
 
 
 

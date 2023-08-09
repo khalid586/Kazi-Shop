@@ -30,3 +30,7 @@ def total_cart_price(products,cart):
     for p in products:
         sum += price_total(p,cart)
     return sum 
+
+@register.filter(name = 'multiply')
+def total(number1,number2):
+    return number1 * number2 

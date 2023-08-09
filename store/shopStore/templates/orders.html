@@ -7,7 +7,7 @@
 
 
 <br>
-    <h1 align = "center">Your Orders</h1>
+    <h1 align = "center"><u>Your Orders</u></h1>
 
 
     <div class="container">
@@ -17,30 +17,29 @@
                     <tr>
                         <th>Product</th>
                         <th>Image</th>
+                        <th>Order Date</th>
                         <th>Price</th>
                         <th>Quantity</th>
                         <th>Total</th>
+                        <th>Order Status</th>
                     </tr>
                 </thead>
                 <tbody>
 
-                    {% for product in products %}
+                    {% for order in orders %}
                     <tr>
-                        <td scope="row"> {{product.name}} </td>
-                        <td><img align = "center" src="{{product.image.url}}" class="card-img-top mt-3" alt="..." style=" width:100px ;height:100px; border-radius: 50px;"></td>
-                        <td>{{product.price}} &#2547; </td>
-                        <td>{{product|cart_quantity:request.session.cart}}</td>
-                        <td>{{product|price_total:request.session.cart}} &#2547; </td>
+                        <td scope="row"> {{order.product.name}} </td>
+                        <td><img align = "center" src="{{order.product.image.url}}" class="card-img-top mt-3" alt="..." style=" width:100px ;height:100px; border-radius: 50px;"></td>
+                        <td>{{order.date}}</td>
+                        <td>{{order.price}} &#2547; </td>
+                        <td>{{order.quantity}}</td>
+                        <td>{{order.quantity|multiply:order.price}} &#2547; </td>
+                        <td>{{order.status|default:'pending'}}</td>
                     </tr>
                     {% endfor %}
                 </tbody>
 
-                <tfoot>
-                        <tr >
-                            <th colspan = "4" class = "text-center"> Total Price</th>
-                            <th > {{products|total_cart_price:request.session.cart}} &#2547; </th>
-                        </tr>
-                </tfoot>
+                
             </table>
 
         </div>
