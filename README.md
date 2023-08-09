@@ -44,8 +44,8 @@ python manage.py migrate
 
 <!-- Remaining tasks so far:
 
-1) Orders page (Page after checking out)
-2) Page shown after subscribing
-3) Admin panel design 
+
+1) Admin panel design 
+2) Add middleware
 
 -->

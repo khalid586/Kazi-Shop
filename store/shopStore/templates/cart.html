@@ -41,11 +41,14 @@
             </table>
 
             <div>
-                <p  align="center"><a class = "btn btn-outline-success col-lg-3 p-3" href='/' >Continue Shopping</a></p>
-                <p align = "center" class = ""><a href="#" class = "btn btn-outline-info mt-1 col-lg-2 p-2" data-bs-toggle="modal" data-bs-target="#exampleModal">Check Out</a></p>
+                <p  align="center"><a class = "btn btn-outline-success col-lg-3 p-2" href='/' >Continue Shopping</a></p>
+                <p align = "center" class = ""><a href="#" class = "btn btn-outline-warning mt-1 col-lg-2 p-2" data-bs-toggle="modal" data-bs-target="#exampleModal">Check Out</a></p>
+                
             </div>
         </div>
-    </div>
+    </div>          
+    
+    <p align="center" class = ""><a class="btn btn-outline-danger " href="/"><b>Your Orders</b></a></p>
   
   <!-- Modal -->
   <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
@@ -57,7 +60,7 @@
         </div>
         <div class="modal-body">
             <div class = "m-2 p-3">
-                <form action="/orders/" method = "POST">
+                <form action="/orders/" method = "POST"> 
                     {% csrf_token %}
 
                     <div class="form-group">
