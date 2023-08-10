@@ -35,9 +35,9 @@
                         <td>{{order.quantity}}</td>
                         <td>{{order.quantity|multiply:order.price}} &#2547; </td>
                         {% if order.status %}
-                            <td><p class = "btn btn-success">Completed</p></td> 
+                            <td><p class = "btn btn-success" style="border-radius: 25px;"><small>Completed</small></p></td> 
                         {% else %}
-                            <td><p class = "btn btn-warning">Pending</p></td>
+                            <td><p class = "btn btn-warning" style="border-radius: 25px;"><small>Pending</small></p></td>
                         {% endif %}
                     </tr>
                     {% endfor %}
