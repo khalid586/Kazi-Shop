@@ -48,4 +48,5 @@ python manage.py migrate
 1) Admin panel design 
 2) Add middleware
 some demo changes will be made 
+one more change 
 -->
