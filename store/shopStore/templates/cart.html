@@ -1,89 +1,93 @@
-{% extends 'base.html' %}
-
-{% block head %} Kazi Store | Cart{% endblock %}
-
-{% load cart %}
-{% block content %}
-    <h1 align = "center"><u>Your Cart</u></h1>
+{% extends 'base.html' %} {% block head %} Kazi Store | Cart{% endblock %} {% load cart %} {% block content %}
+<h1 align="center"><u>Your Cart</u></h1>
 
 
-    <div class="container">
-        <div class = "border rounded p-4 m-4">
-            <table class="table" border = "">
-                <thead>
-                    <tr>
-                        <th>Product</th>
-                        <th>Image</th>
-                        <th>Price</th>
-                        <th>Quantity</th>
-                        <th>Total</th>
-                    </tr>
-                </thead>
-                <tbody>
+<div class="container">
+    <div class="border rounded p-4 m-4">
+        <table class="table" border="">
+            <thead>
+                <tr>
+                    <th>Product</th>
+                    <th>Image</th>
+                    <th>Price</th>
+                    <th>Quantity</th>
+                    <th>Total</th>
+                </tr>
+            </thead>
+            <tbody>
 
-                    {% for product in products %}
-                    <tr>
-                        <td scope="row"> {{product.name}} </td>
-                        <td><img align = "center" src="{{product.image.url}}" class="card-img-top mt-3" alt="..." style=" width:100px ;height:100px; border-radius: 50px;"></td>
-                        <td>{{product.price}} &#2547; </td>
-                        <td>{{product|cart_quantity:request.session.cart}}</td>
-                        <td>{{product|price_total:request.session.cart}} &#2547; </td>
-                    </tr>
-                    {% endfor %}
-                </tbody>
+                {% for product in products %}
+                <tr>
+                    <td scope="row"> {{product.name}} </td>
+                    <td><img align="center" src="{{product.image.url}}" class="card-img-top mt-3" alt="..." style=" width:100px ;height:100px; border-radius: 50px;"></td>
+                    <td>{{product.price}} &#2547; </td>
+                    <td>{{product|cart_quantity:request.session.cart}}</td>
+                    <td>{{product|price_total:request.session.cart}} &#2547; </td>
+                </tr>
+                {% endfor %}
+            </tbody>
 
-                <tfoot>
-                        <tr >
-                            <th colspan = "4" class = "text-center"> Total Price</th>
-                            <th > {{products|total_cart_price:request.session.cart}} &#2547; </th>
-                        </tr>
-                </tfoot>
-            </table>
-            
-            <div>       
-                <p  align="center"><a class = "btn btn-outline-danger col-lg-3 p-2" href='#'  data-bs-toggle="modal" data-bs-target="#exampleModal">Check Out </a></p>
-                <p align = "center" class = ""><a href="/" class = "btn btn-outline-success mt-1 col-lg-2">Add more items</a></p>
-                
-            </div>
+            <tfoot>
+                <tr>
+                    <th colspan="4" class="text-center"> Total Price</th>
+                    <th> {{products|total_cart_price:request.session.cart}} &#2547; </th>
+                </tr>
+            </tfoot>
+        </table>
+
+        <div>
+            {% if request.session.customer %}
+            <p align="center">
+                <a class="btn btn-outline-danger col-lg-3 p-2" href='#' data-bs-toggle="modal" data-bs-target="#exampleModal">Check Out </a>
+            </p>
+            {% else %}
+            <p align="center">
+                <a href="/login" class="btn btn-outline-danger mt-1 col-lg-2">Please login to Checkout</a>
+            </p>
+            {% endif %}
+
+            <p align="center"><a href="/" class="btn btn-outline-success mt-1 col-lg-2">Add more items</a></p>
+
         </div>
-    </div>       
-    
-    <p align="center" class = ""><a class="btn btn-outline-primary " href="/orders/"><b>Your Orders</b></a></p>
-  
-  <!-- Modal -->
-  <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-    <div class="modal-dialog">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h1 class="modal-title fs-1" id="exampleModalLabel">Checkout Form</h1>
-          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-        </div>
-        <div class="modal-body">
-            <div class = "m-2 p-3">
-                <form action="/orders/" method = "POST"> 
-                    {% csrf_token %}
-
-                    <div class="form-group">
-                      <label for="">Address</label>
-                      <input type="text" name="address" id="" class="form-control" placeholder="" aria-describedby="helpId">
-                      
-                    </div>
-
-                    <div class="form-group">
-                        <label for="">Phone</label>
-                        <input type="text" name="phone" id="" class="form-control" placeholder="" aria-describedby="helpId">
-                        
-                    </div>
-                    <br>
-                    <input type="submit" class = "btn float-right btn-outline-success col-lg-5" value="checkout">
-                </form>
-
-            </div>
-        </div>
-        <div class="modal-footer">
-          <button type="button" class="btn btn-outline-danger" data-bs-dismiss="modal">Close</button>
-        </div>
-      </div>
     </div>
-  </div>
+</div>
+
+<p align="center" class=""><a class="btn btn-outline-primary " href="/orders/"><b>Your Orders</b></a></p>
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h1 class="modal-title fs-1" id="exampleModalLabel">Checkout Form</h1>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <div class="m-2 p-3">
+                    <form action="/orders/" method="POST">
+                        {% csrf_token %}
+
+                        <div class="form-group">
+                            <label for="">Address</label>
+                            <input type="text" name="address" id="" class="form-control" placeholder="" aria-describedby="helpId">
+
+                        </div>
+
+                        <div class="form-group">
+                            <label for="">Phone</label>
+                            <input type="text" name="phone" id="" class="form-control" placeholder="" aria-describedby="helpId">
+
+                        </div>
+                        <br>
+                        <input type="submit" class="btn float-right btn-outline-success col-lg-5" value="checkout">
+                    </form>
+
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-outline-danger" data-bs-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
+</div>
 {% endblock %}

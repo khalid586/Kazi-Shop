@@ -7,6 +7,9 @@ from .models.customer import Customer
 from django.views import View
 from .models.subscriber import Subscriber
 from .models.orders import Order
+from django.utils.decorators import method_decorator
+from shopStore.middlewares.auth import auth_middleware
+
 # Create your views here.
 
 def home(request):
@@ -195,7 +198,7 @@ def logout(request):
 def cart(request):
     cart_session = request.session.get('cart')
 
-    if cart_session is not None :
+    if cart_session is not None:
         ids = list(request.session.get('cart').keys())
         products = Product.get_products_by_id(ids)
         print(products)
@@ -206,6 +209,8 @@ def cart(request):
 
     
 class OrderView(View):
+    @method_decorator(auth_middleware)
+    
     def get(self,requeest):
         customer = requeest.session.get('customer')
         orders = Order.get_orders_by_customer(customer)
