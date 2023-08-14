@@ -41,12 +41,15 @@ python manage.py migrate
 ```
 </details>
 
+<details> 
+<summary>Customized Admin Panel</summary>
 
-<!-- Remaining tasks so far:
+We have to install jazzmin using terminal
 
+Run the following commands in the terminal 
+```
+pip install -U django-jazzmin
+```
+Then go to settings and type ' 'jazzmin' ' in the INSTALLED APPS
 
-1) Admin panel design 
-2) Add middleware
-some demo changes will be made 
-one more change 
--->
+</details>
