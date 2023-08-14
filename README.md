@@ -50,6 +50,6 @@ Run the following commands in the terminal
 ```
 pip install -U django-jazzmin
 ```
-Then go to settings and type ' 'jazzmin' ' in the INSTALLED APPS
+Then go to settings and type `'jazzmin',` in the INSTALLED APPS
 
 </details>
