@@ -6,10 +6,25 @@ An online departmental store which makes customer's life easy.
 
 To install django and create a django project first open a folder and then move into that folder and open terminal do the following steps(in the terminal).
 
+1. Install django
+```
+pip install django
+```
+2. Upgrade django (If needed)
 ```
 pip install django --upgrade
+```
+
+1. Create Project
+```
 django-admin startproject store
+```
+1. go to the project folder
+```
 cd store
+```
+1. Run server
+```
 python manage.py runserver
 ```
 
