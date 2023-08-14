@@ -4,6 +4,7 @@
 
 {% block content %}
 {% load cart %}
+   
 
 
   {% if request.session.customer %} 
@@ -12,7 +13,7 @@
     <h4><p align = "center" style="color: red"><b>You haven't logged in</b></p></h4>
     
   {% endif %}
- 
+
   <div class="container-fluid mt-3">
   <div class="row">
     
@@ -28,7 +29,7 @@
 				{% endfor %}
 
       </div>
-    </div>
+    </div> 
 
     <div id='products' class="col-lg-10">
       <div class="row mx-auto">
