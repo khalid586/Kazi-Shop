@@ -1,5 +1,17 @@
 An online departmental store which makes customer's life easy.
 
+# Feartures 
+- User Authentication
+- Category wise product selection
+- Adding Items to cart
+  - Quantity Increment & Decrement
+  - Checkout only when user is logged in &     have items in cart
+- Subscription Model
+- Customized Admin Panel
+- Order Tracking (By Admin)
+
+<br> 
+
 ### You will find some necessary instructions below
 <details> 
 <summary>How to create a django project</summary>
@@ -14,16 +26,15 @@ pip install django
 ```
 pip install django --upgrade
 ```
-
-1. Create Project
+3. Create Project
 ```
 django-admin startproject store
 ```
-1. go to the project folder
+4. go to the project folder
 ```
 cd store
 ```
-1. Run server
+5. Run server
 ```
 python manage.py runserver
 ```
@@ -57,7 +68,7 @@ python manage.py migrate
 </details>
 
 <details> 
-<summary>Customized Admin Panel</summary>
+<summary>How to create a Customized Admin Panel</summary>
 
 We have to install jazzmin using terminal
 
