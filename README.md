@@ -10,6 +10,8 @@ An online departmental store which makes customer's life easy.
 - Customized Admin Panel
 - Order Tracking (By Admin)
 
+<br> 
+
 ### You will find some necessary instructions below
 <details> 
 <summary>How to create a django project</summary>
@@ -67,7 +69,7 @@ python manage.py migrate
 </details>
 
 <details> 
-<summary>Customized Admin Panel</summary>
+<summary>How to create a Customized Admin Panel</summary>
 
 We have to install jazzmin using terminal
 
