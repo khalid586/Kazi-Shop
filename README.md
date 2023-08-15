@@ -1,5 +1,15 @@
 An online departmental store which makes customer's life easy.
 
+# Feartures 
+- User Authentication
+- Category wise product selection
+- Adding Items to cart
+  - Quantity Increment & Decrement
+  - Checkout only when user is logged in &     have items in cart
+- Subscription Model
+- Customized Admin Panel
+- Order Tracking (By Admin)
+
 ### You will find some necessary instructions below
 <details> 
 <summary>How to create a django project</summary>
