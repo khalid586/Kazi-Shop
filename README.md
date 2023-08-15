@@ -61,10 +61,11 @@ python manage.py migrate
 
 We have to install jazzmin using terminal
 
+To install ,
 Run the following commands in the terminal 
 ```
 pip install -U django-jazzmin
 ```
-Then go to settings and type `'jazzmin',` in the INSTALLED APPS
+Then go to `settings.py` and type `'jazzmin',` in the INSTALLED APPS
 
 </details>
