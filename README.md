@@ -26,16 +26,15 @@ pip install django
 ```
 pip install django --upgrade
 ```
-
-1. Create Project
+3. Create Project
 ```
 django-admin startproject store
 ```
-1. go to the project folder
+4. go to the project folder
 ```
 cd store
 ```
-1. Run server
+5. Run server
 ```
 python manage.py runserver
 ```
