@@ -15,7 +15,7 @@ An online departmental store which makes customer's life easy.
 
 <br> 
 
-### You will find some necessary instructions below
+# Some necessary instructions 
 <details> 
 <summary>How to create a django project</summary>
 
