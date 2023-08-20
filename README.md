@@ -3,7 +3,7 @@ An online departmental store which makes customer's life easy.
 # Demo
  <p><a href = "https://youtu.be/x27qBDEJ1HY"> <img align = "center" src = "https://cdn.dribbble.com/users/1369921/screenshots/3699553/media/632fe87d30ef9413a3512dd317727b8b.gif" width = "70px"></a> You will find video demo &nbsp;<b>Here</b>➡️ <a href = "https://youtu.be/x27qBDEJ1HY">Youtube</a></p>
 
-# Feartures 
+# Features 
 - User Authentication
 - Category wise product selection
 - Adding Items to cart
