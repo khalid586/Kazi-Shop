@@ -1,7 +1,11 @@
 # Introduction
-Kazi departmental store is a physical store located in cumilla. The customer base is mostly people living at jhautola.<br>We were given a task by one of our supervisors that we have to build a product for an enterprise.<br>This project was a part of one of our sessional courses.<br>We decided to build a website where customers can order a product and the admin can see the products ordered by customers.
+Kazi departmental store is a physical store located in cumilla. The customer base is mostly people living at jhautola.
 
-### Reason for choosing django
+**We were given a task by one of our supervisors that we have to build a product for an enterprise.**
+
+**This project was a part of one of our sessional courses.<br>We decided to build a website where customers can order a product and the admin can see the products ordered by customers.**
+
+## Why Django?
 We decided to complete this project in django because:
   - Takes less time to build prototype.
   - Comes with SQLite as database.
