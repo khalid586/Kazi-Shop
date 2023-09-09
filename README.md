@@ -14,13 +14,13 @@ Kazi departmental store is a physical store located in cumilla. The customer bas
 
 # Features 
 - [User Authentication]()
-- Category wise product selection
-- Adding Items to cart
+- [Category wise product selection]()
+- [Adding Items to cart]()
   - Quantity Increment & Decrement
   - Checkout only when user is logged in &     have items in cart
-- Subscription Model
-- Customized Admin Panel
-- Order Tracking (By Admin)
+- [Subscription Model]()
+- [Customized Admin Panel]()
+- [Order Tracking]() (By Admin)
 
 <br> 
 
