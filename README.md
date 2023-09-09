@@ -3,7 +3,7 @@ Kazi departmental store is a physical store located in cumilla. The customer bas
 
 **We were given a task by one of our supervisors that we have to build a product for an enterprise.**
 
-**This project was a part of one of our sessional courses.<br>We decided to build a website where customers can order a product and the admin can see the products ordered by customers.**
+**This project was a part of one of our sessional courses.We decided to build a website where customers can order a product and the admin can see the products ordered by customers.**
 
 ## Why Django?
 We decided to complete this project in django because:
