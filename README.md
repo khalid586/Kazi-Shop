@@ -9,11 +9,11 @@ Kazi departmental store is a physical store located in cumilla. The customer bas
     - Comes with SQLite as database.
     - Django comes with a default admin panel(which we later customized) which made our job easier.
 
-# Demo
- <p><a href = "https://youtu.be/x27qBDEJ1HY"> <img align = "center" src = "https://cdn.dribbble.com/users/1369921/screenshots/3699553/media/632fe87d30ef9413a3512dd317727b8b.gif" width = "70px"></a> You will find video demo &nbsp;<b>Here</b>➡️ <b><a href = "https://youtu.be/x27qBDEJ1HY">Youtube</a></b></p>
+# <a href = "https://youtu.be/x27qBDEJ1HY"> <img align = "center" src = "https://cdn.dribbble.com/users/1369921/screenshots/3699553/media/632fe87d30ef9413a3512dd317727b8b.gif" width = "60px"></a> Demo
+ <p> You will find video demo &nbsp;<b>Here</b>➡️ <b><a href = "https://youtu.be/x27qBDEJ1HY">Youtube</a></b></p>
 
 # Features 
-- User Authentication
+- [User Authentication]()
 - Category wise product selection
 - Adding Items to cart
   - Quantity Increment & Decrement
