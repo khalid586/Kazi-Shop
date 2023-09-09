@@ -6,7 +6,7 @@ Kazi departmental store is a physical store located in cumilla. The customer bas
 
   We decided to complete this project in django because:
     - Takes less time to build prototype.
-    - Comes with default SQLite as database.
+    - Comes with SQLite as database.
     - Django comes with a default admin panel(which we later customized) which made our job easier.
 
 # Demo
