@@ -1,4 +1,4 @@
-<img src ="https://cdn.dribbble.com/users/398490/screenshots/1297496/dribbble_4.gif" width= "800px" height = "300px">
+<img src ="https://cdn.dribbble.com/users/398490/screenshots/1297496/dribbble_4.gif" width= "800px" height = "400px">
 
 # <img src = "https://cdn.dribbble.com/users/1138721/screenshots/10809828/media/478d32b2e65c8c3194b7f2154e179231.gif" align = "center" width = "60px" height = "40px"> Introduction
 Kazi departmental store is a physical store located in cumilla. The customer base is mostly people living at jhautola.
