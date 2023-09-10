@@ -1,6 +1,6 @@
 <img src ="https://cdn.dribbble.com/users/398490/screenshots/1297496/dribbble_4.gif" width= "800px" height = "300px">
 
-# <img src = "https://cdn.dribbble.com/users/2206859/screenshots/4955676/hotel_dribble1.gif" align = "center" width = "60px" height = "40px"> Introduction
+# <img src = "https://cdn.dribbble.com/users/1138721/screenshots/10809828/media/478d32b2e65c8c3194b7f2154e179231.gif" align = "center" width = "60px" height = "40px"> Introduction
 Kazi departmental store is a physical store located in cumilla. The customer base is mostly people living at jhautola.
 
 **We were given a task by one of our supervisors that we have to build a product for an enterprise.**
@@ -19,7 +19,7 @@ We decided to complete this project in django because:
 
 
 
-# <img src = "https://cdn.dribbble.com/users/1138721/screenshots/10809828/media/478d32b2e65c8c3194b7f2154e179231.gif" align = "center" width = "60px" height = "40px"> Features 
+# <img src = "https://cdn.dribbble.com/users/1708950/screenshots/4188877/media/6b06a38e84212c55eac1ef33dbd3d318.gif" align = "center" width = "60px" height = "40px"> Features 
 - [User Authentication]()
 - [Category wise product selection]()
 - [Adding Items to cart]()
