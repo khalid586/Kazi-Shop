@@ -31,7 +31,7 @@ We decided to complete this project in django because:
 
 <br> 
 
-# <img src = "https://cdn.dribbble.com/users/2493316/screenshots/14030448/media/8b87a18633c28586e4a315bcdaab031b.gif" align = "center" width = "60px" height = "40px"> Django Commands
+# [<img src = "https://cdn.dribbble.com/users/2493316/screenshots/14030448/media/8b87a18633c28586e4a315bcdaab031b.gif" align = "center" width = "60px" height = "40px">]() Django Commands
 
 <details> 
 <summary>How to create a django project</summary>
