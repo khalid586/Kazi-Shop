@@ -96,3 +96,12 @@ pip install -U django-jazzmin
 Then go to `settings.py` and type `'jazzmin',` in the INSTALLED APPS
 
 </details>
+
+<details> 
+<summary>How to install pillow</summary>
+ 
+```
+ python -m pip install  Pillow
+```
+
+</details>
